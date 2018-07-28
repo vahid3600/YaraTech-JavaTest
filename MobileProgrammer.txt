@@ -1,6 +1,0 @@
-
-Name: sara
-Mastercard number: 1234
-YearsEmployed: 15
-Last job: bikar
-App released: 5
