@@ -12,19 +12,30 @@ public class Main {
 	static Scanner reader = new Scanner(System.in);
 
 	public static void main(String[] args) {
+		
+		//method to show menu and get input from user
 		runProgram();
 	}
 
 	private static void runProgram() {
+		
 		System.out.println("\n" +"1.Add user" + "\n" + "2.See users list");
+		while(!reader.hasNextInt()) {
+			System.out.println("Error: Enter just number");
+			reader.next();}
 		switch (reader.nextInt()) {
+		
 		case 1:
 			addUser();
 			break;
 
 		case 2:
-			System.out.println("1.Accountant list" + "\n" + "2.Mobile programmer list"+ "\n" + "3.Web programmer list");
+			System.out.println("1.Accountant list" + "\n" + "2.Mobile programmer list"+ "\n" + "3.Web programmer list");			
+			while(!reader.hasNextInt()) {
+				System.out.println("Error: Enter just number");
+				reader.next();}
 			switch (reader.nextInt()) {
+			
 			case 1:
 				seeList("Accountant");
 				break;
@@ -72,6 +83,7 @@ public class Main {
 
 			System.out.println("Enter User name");
 			accountant.setName(reader.next());
+			
 			System.out.println("Enter User Mastercard number");
 			
 		// check if input is number or not
@@ -79,15 +91,20 @@ public class Main {
 				System.out.println("Error: Enter just number");
 				reader.next();}
 			accountant.setMasterNum(reader.nextInt());
+			
 			System.out.println("Enter User years employed");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
 			accountant.setYearEmploy(reader.nextInt());
+			
 			System.out.println("Enter User last degree");
 			accountant.setLastDegree(reader.next());
 
 			System.out.println("do you want to save this record" + "\n" + "1.yes" + "\n" + "2.no");
+			while(!reader.hasNextInt()) {
+				System.out.println("Error: Enter just number");
+				reader.next();}
 			if (reader.nextInt() == 1) {
 				printData("Accountant", "\n"+"Name: " + accountant.getName() +"\n" 
 						 +"Mastercard number: " + accountant.getMasterNum()+ "\n" 
@@ -99,22 +116,28 @@ public class Main {
 
 		// if input is "1" add a MobileProgrammer resume in MobileProgrammer.txt file
 		case 2:
+			
+			// Create instance of MobileProgrammer
 			MobileProgrammer mobileProgrammer = new MobileProgrammer();
 
 			System.out.println("Enter User name");
 			mobileProgrammer.setName(reader.next());
+			
 			System.out.println("Enter User Mastercard number");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
 			mobileProgrammer.setMasterNum(reader.nextInt());
+			
 			System.out.println("Enter User years employed");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
 			mobileProgrammer.setYearEmploy(reader.nextInt());
+			
 			System.out.println("Enter User last job");
 			mobileProgrammer.setLastJob(reader.next());
+			
 			System.out.println("Enter User app released number");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
@@ -122,6 +145,9 @@ public class Main {
 			mobileProgrammer.setAppReleased(reader.nextInt());
 
 			System.out.println("do you want to save this record" + "\n" + "1.yes" + "\n" + "2.no");
+			while(!reader.hasNextInt()) {
+				System.out.println("Error: Enter just number");
+				reader.next();}
 			if (reader.nextInt() == 1) {
 				printData("MobileProgrammer", "\n"+"Name: " + mobileProgrammer.getName() + "\n"
 						 +"Mastercard number: "+ mobileProgrammer.getMasterNum() + "\n" 
@@ -133,26 +159,38 @@ public class Main {
 
 		// if input is "1" add a WebProgrammer resume in WebProgrammer.txt file
 		case 3:
+			
+			// Create instance of WebProgrammer
 			WebProgrammer webProgrammer = new WebProgrammer();
 			
-			System.out.println("Enter User name");
+			System.out.println("Enter User name");			
+			while(!reader.hasNextInt()) {
+				System.out.println("Error: Enter just number");
+				reader.next();}
 			webProgrammer.setName(reader.next());
-			System.out.println("Enter User Mastercard number");
+			
+			System.out.println("Enter User Mastercard number");			
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
 			webProgrammer.setMasterNum(reader.nextInt());
+			
 			System.out.println("Enter User years employed");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
 			webProgrammer.setYearEmploy(reader.nextInt());
+			
 			System.out.println("Enter User last job");
 			webProgrammer.setLastJob(reader.next());
+			
 			System.out.println("Enter User program language");
 			webProgrammer.setProgramLanguage(reader.next());
 
 			System.out.println("do you want to save this record" + "\n" + "1.yes" + "\n" + "2.no");
+			while(!reader.hasNextInt()) {
+				System.out.println("Error: Enter just number");
+				reader.next();}
 			if (reader.nextInt() == 1) {
 				printData("WebProgrammer","\n"+"Name: " + webProgrammer.getName() + "\n" 
 						 +"Mastercard number: " + webProgrammer.getMasterNum() + "\n" 
@@ -184,7 +222,10 @@ public class Main {
 				System.out.println(string);
 			}
 			runProgram();
+			
 		} catch (FileNotFoundException e) {
+			
+			//if file not created yet, show this error
 			System.out.println("List is empty!");
 			runProgram();
 
