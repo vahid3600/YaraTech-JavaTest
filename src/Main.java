@@ -79,10 +79,12 @@ public class Main {
 		case 1:
 			
 			// Create instance of Accountant
-			Accountant accountant = new Accountant();
+			Accountant accountant;;
+			String name1, lastDegree1;
+			int masterNum1, yearsEmploy1;
 
 			System.out.println("Enter User name");
-			accountant.setName(reader.next());
+			name1 = reader.next();
 			
 			System.out.println("Enter User Mastercard number");
 			
@@ -90,16 +92,18 @@ public class Main {
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
-			accountant.setMasterNum(reader.nextInt());
+			masterNum1 = reader.nextInt();
 			
 			System.out.println("Enter User years employed");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
-			accountant.setYearEmploy(reader.nextInt());
+			yearsEmploy1 = reader.nextInt();
 			
 			System.out.println("Enter User last degree");
-			accountant.setLastDegree(reader.next());
+			lastDegree1 = reader.next();
+			
+			accountant = new Accountant(name1, masterNum1, yearsEmploy1, lastDegree1);
 
 			System.out.println("do you want to save this record" + "\n" + "1.yes" + "\n" + "2.no");
 			while(!reader.hasNextInt()) {
@@ -118,31 +122,36 @@ public class Main {
 		case 2:
 			
 			// Create instance of MobileProgrammer
-			MobileProgrammer mobileProgrammer = new MobileProgrammer();
+			MobileProgrammer mobileProgrammer;
+			String name2, lastJob2;
+			int masterNum2, yearsEmploy2, appReleased2;
+
 
 			System.out.println("Enter User name");
-			mobileProgrammer.setName(reader.next());
+			name2 = reader.next();
 			
 			System.out.println("Enter User Mastercard number");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
-			mobileProgrammer.setMasterNum(reader.nextInt());
+			masterNum2 = reader.nextInt();
 			
 			System.out.println("Enter User years employed");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
-			mobileProgrammer.setYearEmploy(reader.nextInt());
+			yearsEmploy2 = reader.nextInt();
 			
 			System.out.println("Enter User last job");
-			mobileProgrammer.setLastJob(reader.next());
+			lastJob2 = reader.next();
 			
 			System.out.println("Enter User app released number");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
-			mobileProgrammer.setAppReleased(reader.nextInt());
+			appReleased2 = reader.nextInt();
+			
+			mobileProgrammer = new MobileProgrammer(name2, masterNum2, yearsEmploy2, lastJob2, appReleased2);
 
 			System.out.println("do you want to save this record" + "\n" + "1.yes" + "\n" + "2.no");
 			while(!reader.hasNextInt()) {
@@ -161,31 +170,35 @@ public class Main {
 		case 3:
 			
 			// Create instance of WebProgrammer
-			WebProgrammer webProgrammer = new WebProgrammer();
+			WebProgrammer webProgrammer;
+			String name3, lastJob3, programLanguage3;
+			int masterNum3, yearsEmploy3;
 			
 			System.out.println("Enter User name");			
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
-			webProgrammer.setName(reader.next());
+			name3 = reader.next();
 			
 			System.out.println("Enter User Mastercard number");			
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
-			webProgrammer.setMasterNum(reader.nextInt());
+			masterNum3 = reader.nextInt();
 			
 			System.out.println("Enter User years employed");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
-			webProgrammer.setYearEmploy(reader.nextInt());
-			
+			yearsEmploy3 = reader.nextInt();
+		
 			System.out.println("Enter User last job");
-			webProgrammer.setLastJob(reader.next());
+			lastJob3 = reader.next();
 			
 			System.out.println("Enter User program language");
-			webProgrammer.setProgramLanguage(reader.next());
+			programLanguage3 = reader.next();
+			
+			webProgrammer = new WebProgrammer(name3, masterNum3, yearsEmploy3, lastJob3, programLanguage3);
 
 			System.out.println("do you want to save this record" + "\n" + "1.yes" + "\n" + "2.no");
 			while(!reader.hasNextInt()) {

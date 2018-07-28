@@ -1,24 +1,32 @@
 
-public class Accountant {
+public class Accountant extends Person {
 
-private String name;
-private Integer masterNum;
-private Integer yearEmploy;
-private String lastDegree;
+	private Integer yearEmploy;
+	private String lastDegree;
 
-public void setName(String name) {this.name = name;}
+	public Accountant(String name, Integer masterNum, Integer yearEmploy, String lastDegree) {
+		super(name, masterNum);
 
-public String getName() {return name;}
+		this.yearEmploy = yearEmploy;
+		this.lastDegree = lastDegree;
+	}
 
-public void setMasterNum(Integer masterNum) {this.masterNum = masterNum;}
+	public Integer getYearEmploy() {
+		return yearEmploy;
+	}
 
-public Integer getMasterNum() {return masterNum;}
+	public String getLastDegree() {
+		return lastDegree;
+	}
 
-public void setYearEmploy(Integer yearEmploy) {this.yearEmploy = yearEmploy;}
+	@Override
+	public String getName() {
+		return super.getName();
+	}
 
-public Integer getYearEmploy() {return yearEmploy;}
+	@Override
+	public Integer getMasterNum() {
+		return super.getMasterNum();
+	}
 
-public void setLastDegree(String lastDegree) {this.lastDegree = lastDegree;}
-
-public String getLastDegree() {return lastDegree;}
 }

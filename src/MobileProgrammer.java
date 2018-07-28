@@ -1,29 +1,27 @@
 
-public class MobileProgrammer {
+public class MobileProgrammer extends Person{
 
-	private String name;
-	private Integer masterNum;
 	private Integer yearEmploy;
 	private String lastJob;
 	private Integer appReleased;
 
-	public void setName(String name) {this.name = name;}
+	public MobileProgrammer(String name, Integer masterNum, Integer yearEmploy, String lastJob, Integer appReleased) {
+		super(name, masterNum);
 
-	public String getName() {return name;}
-
-	public void setMasterNum(Integer masterNum) {this.masterNum = masterNum;}
-
-	public Integer getMasterNum() {return masterNum;}
-
-	public void setYearEmploy(Integer yearEmploy) {this.yearEmploy = yearEmploy;}
+		this.yearEmploy = yearEmploy;
+		this.lastJob = lastJob;
+		this.appReleased = appReleased;
+	}
 
 	public Integer getYearEmploy() {return yearEmploy;}
 
-	public void setLastJob(String lastJob) {this.lastJob = lastJob;}
-
 	public String getLastJob() {return lastJob;}
-	
-	public void setAppReleased(Integer appReleased) {this.appReleased = appReleased;}
 
 	public Integer getAppReleased() {return appReleased;}
+	
+	@Override
+	public String getName() {return super.getName();}
+
+	@Override
+	public Integer getMasterNum() {return super.getMasterNum();}
 }
