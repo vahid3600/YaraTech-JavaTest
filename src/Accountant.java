@@ -4,12 +4,19 @@ public class Accountant extends Person {
 	private Integer yearEmploy;
 	private String lastDegree;
 
-	public Accountant(String name, Integer masterNum, Integer yearEmploy, String lastDegree) {
+	public Accountant(String name, Integer masterNum) {
 		super(name, masterNum);
+	}
 
+	public void setYearEmploy(Integer yearEmploy) {
 		this.yearEmploy = yearEmploy;
+	}
+
+
+	public void setLastDegree(String lastDegree) {
 		this.lastDegree = lastDegree;
 	}
+
 
 	public Integer getYearEmploy() {
 		return yearEmploy;

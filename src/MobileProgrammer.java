@@ -5,13 +5,24 @@ public class MobileProgrammer extends Person{
 	private String lastJob;
 	private Integer appReleased;
 
-	public MobileProgrammer(String name, Integer masterNum, Integer yearEmploy, String lastJob, Integer appReleased) {
+	public MobileProgrammer(String name, Integer masterNum) {
 		super(name, masterNum);
+	}
 
+	public void setYearEmploy(Integer yearEmploy) {
 		this.yearEmploy = yearEmploy;
+	}
+
+
+	public void setLastJob(String lastJob) {
 		this.lastJob = lastJob;
+	}
+
+
+	public void setAppReleased(Integer appReleased) {
 		this.appReleased = appReleased;
 	}
+
 
 	public Integer getYearEmploy() {return yearEmploy;}
 

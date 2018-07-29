@@ -6,13 +6,15 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
 	static Scanner reader = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		
 		//method to show menu and get input from user
 		runProgram();
 	}
@@ -80,8 +82,8 @@ public class Main {
 			
 			// Create instance of Accountant
 			Accountant accountant;;
-			String name1, lastDegree1;
-			int masterNum1, yearsEmploy1;
+			String name1;
+			int masterNum1;
 
 			System.out.println("Enter User name");
 			name1 = reader.next();
@@ -94,17 +96,17 @@ public class Main {
 				reader.next();}
 			masterNum1 = reader.nextInt();
 			
+			accountant = new Accountant(name1, masterNum1);
+			
 			System.out.println("Enter User years employed");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
-			yearsEmploy1 = reader.nextInt();
+			accountant.setYearEmploy(reader.nextInt());
 			
 			System.out.println("Enter User last degree");
-			lastDegree1 = reader.next();
+			accountant.setLastDegree(reader.next());
 			
-			accountant = new Accountant(name1, masterNum1, yearsEmploy1, lastDegree1);
-
 			System.out.println("do you want to save this record" + "\n" + "1.yes" + "\n" + "2.no");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
@@ -123,8 +125,8 @@ public class Main {
 			
 			// Create instance of MobileProgrammer
 			MobileProgrammer mobileProgrammer;
-			String name2, lastJob2;
-			int masterNum2, yearsEmploy2, appReleased2;
+			String name2;
+			int masterNum2;
 
 
 			System.out.println("Enter User name");
@@ -136,23 +138,23 @@ public class Main {
 				reader.next();}
 			masterNum2 = reader.nextInt();
 			
+			mobileProgrammer = new MobileProgrammer(name2, masterNum2);
+			
 			System.out.println("Enter User years employed");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
-			yearsEmploy2 = reader.nextInt();
+			mobileProgrammer.setYearEmploy(reader.nextInt());
 			
 			System.out.println("Enter User last job");
-			lastJob2 = reader.next();
+			mobileProgrammer.setLastJob(reader.next());
 			
 			System.out.println("Enter User app released number");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
-			appReleased2 = reader.nextInt();
+			mobileProgrammer.setAppReleased(reader.nextInt());
 			
-			mobileProgrammer = new MobileProgrammer(name2, masterNum2, yearsEmploy2, lastJob2, appReleased2);
-
 			System.out.println("do you want to save this record" + "\n" + "1.yes" + "\n" + "2.no");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
@@ -171,8 +173,8 @@ public class Main {
 			
 			// Create instance of WebProgrammer
 			WebProgrammer webProgrammer;
-			String name3, lastJob3, programLanguage3;
-			int masterNum3, yearsEmploy3;
+			String name3;
+			int masterNum3;
 			
 			System.out.println("Enter User name");			
 			while(!reader.hasNextInt()) {
@@ -186,20 +188,20 @@ public class Main {
 				reader.next();}
 			masterNum3 = reader.nextInt();
 			
+			webProgrammer = new WebProgrammer(name3, masterNum3);
+			
 			System.out.println("Enter User years employed");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");
 				reader.next();}
-			yearsEmploy3 = reader.nextInt();
+			webProgrammer.setYearEmploy(reader.nextInt());
 		
 			System.out.println("Enter User last job");
-			lastJob3 = reader.next();
+			webProgrammer.setLastJob(reader.next());
 			
 			System.out.println("Enter User program language");
-			programLanguage3 = reader.next();
+			webProgrammer.setProgramLanguage(reader.next());
 			
-			webProgrammer = new WebProgrammer(name3, masterNum3, yearsEmploy3, lastJob3, programLanguage3);
-
 			System.out.println("do you want to save this record" + "\n" + "1.yes" + "\n" + "2.no");
 			while(!reader.hasNextInt()) {
 				System.out.println("Error: Enter just number");

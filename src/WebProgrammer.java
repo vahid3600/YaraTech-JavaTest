@@ -5,11 +5,22 @@ public class WebProgrammer extends Person{
 	private String lastJob;
 	private String programLanguage;
 
-	public WebProgrammer(String name, Integer masterNum, Integer yearEmploy, String lastJob, String programLanguage) {
+	public WebProgrammer(String name, Integer masterNum) {
 		super(name, masterNum);
+	}
 
+
+	public void setYearEmploy(Integer yearEmploy) {
 		this.yearEmploy = yearEmploy;
+	}
+
+
+	public void setLastJob(String lastJob) {
 		this.lastJob = lastJob;
+	}
+
+
+	public void setProgramLanguage(String programLanguage) {
 		this.programLanguage = programLanguage;
 	}
 
